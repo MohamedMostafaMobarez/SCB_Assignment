@@ -12,6 +12,9 @@ public class LoginPage {
     By usernameField = By.name("username");
     By passwordField = By.name("password");
     By loginBtn= By.xpath("//input[@value = 'Log In']");
+    JSONRead jsonRead = new JSONRead();
+    String name = (String)data.get("name");
+
 
 
     public LoginPage(WebDriver driver)
@@ -22,7 +25,7 @@ public class LoginPage {
 
     public void login()
     {
-        driver.findElement(usernameField).sendKeys("Mohamed");
+        driver.findElement(usernameField).sendKeys(jsonRead.getString("name"));
         driver.findElement(passwordField).sendKeys("Test123");
         driver.findElement(loginBtn).click();
 

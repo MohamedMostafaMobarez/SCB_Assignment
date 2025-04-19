@@ -2,6 +2,7 @@ package testPackage_ParaBank;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import pages.HomePage;
@@ -33,5 +34,9 @@ public class TransferFund {
 
     }
 
-
+    @AfterTest
+    public void teardown()
+    {
+        driver.quit();
+    }
 }
